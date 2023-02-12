@@ -95,11 +95,12 @@
 	            <div class="row">
 	                <div class="col-sm-12 msf-form">
 	                    
-	                    <form  action=details method="post" class="form-inline">{% csrf_token %}
+	                    <form  action=details method="post" class="form-inline">
 	                    	
 	                    	<fieldset>
 
 	            				<h4>Introduction <span class="step">(Step 1 / 5)</span></h4>
+								{%csrf_token%}
 	            				<div class="form-group">
 				                    <label for="first-name">Previous works</label><br>
 				                    <textarea name="prev-works" class="about-you form-control" id="prev-works"></textarea>
@@ -125,7 +126,7 @@
 	            				<h4>Plans <span class="step">(Step 2 / 5)</span></h4>
 	            				<div class="form-group">
 				                    <label for="birth-city">Upcoming plans</label><br>
-				                    <input type="text" name="plans" class="birth-city form-control" id="birth-city">
+				                    <input type="text" name="plan" class="birth-city form-control" id="birth-city">
 				                </div>
 				                <div class="form-group">
 				                    <label for="birth-state">Vision</label><br>

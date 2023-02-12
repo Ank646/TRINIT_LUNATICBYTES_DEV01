@@ -253,6 +253,8 @@ def signupngo(request):
 @login_required(login_url='/loginadmin')
 def details(request, ngoo):
     userngo = request.user.username
+    ngoo = ngoo[0:2]+"-"+ngoo[2: 6]+"-"+ngoo[6:]
+
     if request.method == 'POST':
         prevworks = request.POST['prev-works']
         endgoals = request.POST['endgoal']
@@ -266,8 +268,7 @@ def details(request, ngoo):
         twitter = request.POST['social-twitter']
         website = request.POST['social-website']
 
-        use = ngo.objects.filter(ngoname=ngoo).first()
-        profile = use.objects.create(ngowork=prevworks, ngoplan=plan, ngovision=vision, ngofundneeds=fund,
+        profile = ngo.objects.create(ngoname=userngo, ngowork=prevworks, ngoplan=plan, ngovision=vision, ngofundneeds=fund,
                                      ngofb=fb, ngoinsta=insta, ngoweb=website, ngotwitter=twitter)
         profile.save()
 

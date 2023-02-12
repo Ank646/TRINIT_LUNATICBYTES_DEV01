@@ -10,7 +10,7 @@ User = get_user_model()
 class ngo(models.Model):
     ngoname = models.ForeignKey(User, on_delete=models.CASCADE)
     ngonm = models.TextField(blank=True)
-    ngoregid = models.TextField()
+    ngoregid = models.TextField(blank=True)
     ngofield = models.TextField(blank=True)
     ngoaddress = models.TextField(blank=True)
     ngofundneeds = models.TextField(blank=True)
